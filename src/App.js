@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Navbar, NavbarBrand} from 'reactstrap';
 import Menu from './components/MenuComponent';
+import {DISHES} from './shared/dishes';
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
 // import Home from './Home';
@@ -13,19 +14,43 @@ import Menu from './components/MenuComponent';
 import './App.css';
 // import './index.css';
 
-const  App = ()=> {
-  return (
-    <>
-    <div className="App">
-    <Navbar dark color="primary">
-      <div className="container">
-        <NavbarBrand href="https://www.google.com">hello world</NavbarBrand>
+
+class App extends Component{
+  constructor(props){
+    super(props);
+    this.state={
+      dishes:DISHES
+    };
+
+  }
+  render(){
+    return (
+      <>
+      <div>
+      <Navbar dark color="primary">
+        <div className="container">
+          <NavbarBrand href="https://www.google.com">hello world</NavbarBrand>
+        </div>
+        </Navbar>  
+        <Menu dishes={this.state.dishes}/>
       </div>
-      </Navbar>  
-      <Menu/>
-    </div>
+      </>
+    )
+  }
+}
+// const  App = ()=> {
+//   return (
+//     <>
+//     <div className="App">
+//     <Navbar dark color="primary">
+//       <div className="container">
+//         <NavbarBrand href="https://www.google.com">hello world</NavbarBrand>
+//       </div>
+//       </Navbar>  
+//       <Menu/>
+//     </div>
     
-{/* <Switch>
+/* <Switch>
   <div>
     <h1 className=""></h1>
   </div>
@@ -37,11 +62,11 @@ const  App = ()=> {
   <Route path='/signup' component={Contact}/>
 
   <Redirect to="/"/>
-</Switch> */}
+</Switch> */
 
-    </>
+    //</>
       
-    );
-}
+    //);
+//}
 
 export default App;
