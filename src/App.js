@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Navbar, NavbarBrand} from 'reactstrap';
+import Menu from './components/MenuComponent';
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
+// import Home from './Home';
+// import About from './About';
+// import Contact from './Contact';
+// import Service from './Service';
+// import Navbar from './Navbar';
+// import Signin from './Signin/Signin.js';
+// import {Switch,Route, Redirect} from 'react-router-dom';
 import './App.css';
+// import './index.css';
 
-function App() {
+const  App = ()=> {
   return (
+    <>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Navbar dark color="primary">
+      <div className="container">
+        <NavbarBrand href="https://www.google.com">hello world</NavbarBrand>
+      </div>
+      </Navbar>  
+      <Menu/>
     </div>
-  );
+    
+{/* <Switch>
+  <div>
+    <h1 className=""></h1>
+  </div>
+  <Route exact path='/' component={Home}/>
+  <Route path='/about' component={About}/>
+  <Route path='/Service' component={Service}/>
+  <Route path='/contact' component={Contact}/>
+   <Route path='/signin' component={Signin}/> 
+  <Route path='/signup' component={Contact}/>
+
+  <Redirect to="/"/>
+</Switch> */}
+
+    </>
+      
+    );
 }
 
 export default App;
